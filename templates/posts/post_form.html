@@ -2,6 +2,12 @@
 
 {% block content %}
 <div class="container">
-    <h1>This is the update view</h1>
+    <h1>This is the {{ view_type }} view</h1>
+    <form method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class='btn btn-primary' type='submit'>{{ view_type|title }}</button>
+    </form>   
 </div>    
 {% endblock content %}
+ 
