@@ -15,10 +15,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', PostListView.as_view(), name='list'),
+    path('create/', PostCreateView.as_view(), name='create'),
     path('<slug>/', PostDetailView.as_view(), name='detail'),
     path('<slug>/update/', PostUpdateView.as_view(), name='update'),
     path('<slug>/delete/', PostDeletView.as_view(), name='delete'),
-    path('create/', PostCreateView.as_view(), name='create'),
 ]
 
 if settings.DEBUG:
