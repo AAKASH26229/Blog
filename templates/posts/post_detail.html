@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div class='row'>
@@ -29,7 +30,7 @@
                     <h4>Leave a comment below</h4>
                     <form method="POST">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        {{ form|crispy }}
                         <button class='btn btn-primary' type='submit'>Comment</button>
                     </form>   
                     <hr />
@@ -44,7 +45,6 @@
                         <hr />
                     {% endfor %}
                 {% else %}
-                <h4></h4>
                 <a href="{% url 'account_login' %}" class="btn btn-primary"  style="display: block;">Login to comment </a>
                 {% endif %}
             </div>
