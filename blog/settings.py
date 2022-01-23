@@ -118,6 +118,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 STATIFILES_DIRS = BASE_DIR / 'static'
+STATIFILES_STORAGE = 'whitenoise.django.GzipMainfestStaticFilesStorage'
+
 STATIC_ROOT = BASE_DIR / 'static_root'
 MEDIA_ROOT = BASE_DIR / 'media_root'
 
